@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>RMGU Sindhudurg</title>
+	<!-- CSS file -->
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+			<img th:src="@{/images/RMGU_LOGO.png}" src="../static/images/RMGU_LOGO.png" alt="RMGU Sindhudurg" />
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto"></ul>
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/}" href="#">home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/shop}" href="#">shop</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Sign Up</a>
+				</li>
+
+			</ul>
+
+		</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="col-sm-6">
+			<h3 style="margin-top: 10px">Sign Up Now</h3>
+			<p>Please fill out this to register</p>
+			<form th:action="@{/register}" th:object="${user}" method="post">
+				<div class="form-group">
+					<label for="userFirstName">First Name</label>
+					<input type="text" id="userFirstName" name="userFirstName" class="form-control form-control-lg"
+						placeholder="Your First Name" required>
+				</div>
+				<div class="form-group">
+					<label for="userLastName">Last Name</label>
+					<input type="text" id="userLastName" name="userLastName" class="form-control form-control-lg"
+						placeholder="Your Last Name" required>
+				</div>
+				<div class="form-group">
+					<label for="userEmail">Email address</label>
+					<input type="email" id="userEmail" name="userEmail" class="form-control form-control-lg"
+						placeholder="Email" required minlength="6" aria-describedby="emailHelp">
+					<!--<span th:if="${#fields.hasErrors('userEmail')}" th:errors="*{userEmail}" class="error"></span>-->
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+						else.</small>
+				</div>
+
+				<div class="form-group">
+					<label for="userPassword">Password</label>
+					<input type="password" id="userPassword" name="userPassword" class="form-control form-control-lg"
+						placeholder="Password" required>
+				</div>
+
+				<button type="submit" class="btn btn-colour btn-block">Register</button>
+				<span style="margin-top: 10px">Already have an account? <a class="linkControl" href="./login.html"
+						th:href="@{/login}">Login here</a></span>
+			</form>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
